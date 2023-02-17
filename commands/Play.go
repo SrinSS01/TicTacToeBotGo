@@ -79,7 +79,7 @@ func (c *PlayCommand) Execute(session *discordgo.Session, interaction *discordgo
 		Player:     *user,
 		Accepted:   false,
 	}
-	time.Sleep(10 * time.Second)
+	time.Sleep(10 * time.Minute)
 	matchData := game.MatchDataMap[response.ID]
 	if matchData == nil || matchData.Accepted {
 		return
