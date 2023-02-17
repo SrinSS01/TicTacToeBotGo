@@ -41,6 +41,11 @@ var (
 
 // args check
 func init() {
+	// check for TOKEN in environment variables
+	if token := os.Getenv("TOKEN"); token != "" {
+		config.Token = token
+		return
+	}
 	if len(os.Args) != 2 {
 		content, err := os.ReadFile("config.json")
 		if err != nil {
